@@ -1,0 +1,14 @@
+service test
+{
+        disable = no
+        type = UNLISTED
+        wait = no
+        server = /vuln/run.sh
+        server_args = test
+        socket_type = stream
+        protocol = tcp
+        user = root
+        port = 5000
+        flags = REUSE
+        per_source = 3
+}

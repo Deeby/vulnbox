@@ -1,0 +1,12 @@
+version: '3'
+services:
+  vulnbox:
+    build: .
+    privileged: true
+    volumes:
+      - ./vuln:/vuln:ro
+      - ./vuln/box/test/xinetd:/etc/xinetd.d/test:ro
+    ports:
+      - "15000:5000"
+    expose:
+      - "5000"
